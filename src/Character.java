@@ -17,7 +17,7 @@ public class Character {
 
     // Constructeur secondaire Character
     public Character(String name) {
-        this(name,"warrior");
+        this(name, "Warrior");
     }
 
     // Constructeur principal avec équipements
@@ -26,16 +26,16 @@ public class Character {
         this.type = type;
 
         // Attributs spécifiques aux types de personnages
-        if (type.equals("warrior")) {
+        if (type.equals("Warrior")) {
             this.hp = 10;
             this.strength = 10;
-            this.defensiveGear = new DefensiveGear("wooden shield","shield", 1);
-            this.offensiveGear = new OffensiveGear("rotten sword", "sword", 1);
-        } else if (type.equals("magician")) {
+            this.defensiveGear = new DefensiveGear("Wooden shield", "Shield", 1);
+            this.offensiveGear = new OffensiveGear("Rotten sword", "Sword", 1);
+        } else if (type.equals("Magician")) {
             this.hp = 6;
             this.strength = 15;
-            this.defensiveGear = new DefensiveGear("Rockskin potion", "potion", 1);
-            this.offensiveGear = new OffensiveGear("wooden staff", "staff", 1);
+            this.defensiveGear = new DefensiveGear("Rockskin potion", "Potion", 1);
+            this.offensiveGear = new OffensiveGear("Wooden staff", "Staff", 1);
         }
     }
 
@@ -49,9 +49,19 @@ public class Character {
     }
 
     // Méthode toString pour afficher les informations du personnage
-    public String toString() {
-        return "Name: " + this.name + ", Type: " + this.type + ", Healthpoints: " + this.hp + ", Strenght: " + this.strength  +
-                ", Stuff: " + this.offensiveGear + ", " + this.defensiveGear;
+    public String toString()
+    {
+        // Choisir l'emoji en fonction du type
+        String emoji = (this.type.equals("Warrior")) ? "⚔️" : "🧙";
+
+        return "Name: " + this.name +
+                "\nType: " + this.type + emoji +
+                "\n HP ❤\uFE0F: " + this.hp +
+                "\nATQ ⚔\uFE0F: " + this.strength +
+                "\nEquipment: " +
+                "\n" + this.offensiveGear +
+                "\n" + this.defensiveGear +
+                "\n\n";
     }
 }
 

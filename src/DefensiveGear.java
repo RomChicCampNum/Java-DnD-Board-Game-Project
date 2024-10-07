@@ -40,7 +40,7 @@ public class DefensiveGear {
 
     // Méthode toString pour afficher les informations du DeffensiveGear
     public String toString() {
-        return "Nom: " + this.name + ", Type: " + this.type + "Niveau: " + this.level;
+        return "\uD83D\uDEE1\uFE0F: " + this.name;
     }
 }
 

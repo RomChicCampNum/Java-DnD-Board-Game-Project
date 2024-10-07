@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cbae799e-ccee-47e7-b7bd-1c2af19f2b97" name="Changes" comment="Character creation working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DefensiveGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DefensiveGear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OffensiveGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OffensiveGear.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +40,9 @@
     &quot;accountId&quot;: &quot;c724f7db-a99c-4d75-a670-86ee1eaf0ca1&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -99,8 +108,18 @@
       <updated>1727962447418</updated>
       <workItem from="1727962448289" duration="4077000" />
       <workItem from="1728025861522" duration="23196000" />
-      <workItem from="1728053139404" duration="316000" />
+      <workItem from="1728053139404" duration="597000" />
+      <workItem from="1728284836473" duration="9818000" />
     </task>
+    <task id="LOCAL-00001" summary="Character creation working">
+      <option name="closed" value="true" />
+      <created>1728053464811</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728053464811</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

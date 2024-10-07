@@ -39,6 +39,6 @@ public class OffensiveGear {
 
     // Méthode toString pour afficher les informations du OffensiveGear
     public String toString() {
-        return "Nom: " + this.name + ", Type: " + this.type + "Niveau: " + this.level;
+        return "\uD83D\uDDE1\uFE0F: " + this.name;
     }
 }

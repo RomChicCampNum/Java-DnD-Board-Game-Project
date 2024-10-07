@@ -3,61 +3,33 @@ import java.util.*;
 
 public class Menu {
 
-    //UI DU JEU
-    //1 - Bienvenue
-    //2- Création de perso
-    //3- Affichage du personnagé créé : toString
+    private Game game;
+
+    //Constructeur qui prend l'instance du jeu pou intéragir avec
+    public Menu(Game game) {
+        this.game = game;
+    }
 
     // Méthode principale du menu
     public void displayMainMenu() {
-        System.out.println(" .--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--. \n" +
-                "/ .. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\\n" +
-                "\\ \\/\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ \\/ /\n" +
-                " \\/ /`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'\\/ / \n" +
-                " / /\\                                                                                                                                                                            / /\\ \n" +
-                "/ /\\ \\                                                                                                                                                                          / /\\ \\\n" +
-                "\\ \\/ /    $$\\      $$\\           $$\\                                                     $$\\                                                                                    \\ \\/ /\n" +
-                " \\/ /     $$ | $\\  $$ |          $$ |                                                    $$ |                                                                                    \\/ / \n" +
-                " / /\\     $$ |$$$\\ $$ | $$$$$$\\  $$ | $$$$$$$\\  $$$$$$\\  $$$$$$\\$$$$\\   $$$$$$\\        $$$$$$\\    $$$$$$\\                                                                        / /\\ \n" +
-                "/ /\\ \\    $$ $$ $$\\$$ |$$  __$$\\ $$ |$$  _____|$$  __$$\\ $$  _$$  _$$\\ $$  __$$\\       \\_$$  _|  $$  __$$\\                                                                      / /\\ \\\n" +
-                "\\ \\/ /    $$$$  _$$$$ |$$$$$$$$ |$$ |$$ /      $$ /  $$ |$$ / $$ / $$ |$$$$$$$$ |        $$ |    $$ /  $$ |                                                                     \\ \\/ /\n" +
-                " \\/ /     $$$  / \\$$$ |$$   ____|$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$   ____|        $$ |$$\\ $$ |  $$ |                                                                      \\/ / \n" +
-                " / /\\     $$  /   \\$$ |\\$$$$$$$\\ $$ |\\$$$$$$$\\ \\$$$$$$  |$$ | $$ | $$ |\\$$$$$$$\\         \\$$$$  |\\$$$$$$  |                                                                      / /\\ \n" +
-                "/ /\\ \\    \\__/     \\__| \\_______|\\__| \\_______| \\______/ \\__| \\__| \\__| \\_______|         \\____/  \\______/                                                                      / /\\ \\\n" +
-                "\\ \\/ /    $$$$$$$\\                                                                     $$$\\           $$$$$$$\\                                                                  \\ \\/ /\n" +
-                " \\/ /     $$  __$$\\                                                                   $$ $$\\          $$  __$$\\                                                                  \\/ / \n" +
-                " / /\\     $$ |  $$ |$$\\   $$\\ $$$$$$$\\   $$$$$$\\   $$$$$$\\   $$$$$$\\  $$$$$$$\\        \\$$$\\ |         $$ |  $$ | $$$$$$\\  $$$$$$\\   $$$$$$\\   $$$$$$\\  $$$$$$$\\   $$$$$$$\\       / /\\ \n" +
-                "/ /\\ \\    $$ |  $$ |$$ |  $$ |$$  __$$\\ $$  __$$\\ $$  __$$\\ $$  __$$\\ $$  __$$\\       $$\\$$\\$$\\       $$ |  $$ |$$  __$$\\ \\____$$\\ $$  __$$\\ $$  __$$\\ $$  __$$\\ $$  _____|     / /\\ \\\n" +
-                "\\ \\/ /    $$ |  $$ |$$ |  $$ |$$ |  $$ |$$ /  $$ |$$$$$$$$ |$$ /  $$ |$$ |  $$ |      $$ \\$$ __|      $$ |  $$ |$$ |  \\__|$$$$$$$ |$$ /  $$ |$$ /  $$ |$$ |  $$ |\\$$$$$$\\       \\ \\/ /\n" +
-                " \\/ /     $$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$   ____|$$ |  $$ |$$ |  $$ |      $$ |\\$$\\        $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ | \\____$$\\       \\/ / \n" +
-                " / /\\     $$$$$$$  |\\$$$$$$  |$$ |  $$ |\\$$$$$$$ |\\$$$$$$$\\ \\$$$$$$  |$$ |  $$ |       $$$$ $$\\       $$$$$$$  |$$ |     \\$$$$$$$ |\\$$$$$$$ |\\$$$$$$  |$$ |  $$ |$$$$$$$  |      / /\\ \n" +
-                "/ /\\ \\    \\_______/  \\______/ \\__|  \\__| \\____$$ | \\_______| \\______/ \\__|  \\__|       \\____\\__|      \\_______/ \\__|      \\_______| \\____$$ | \\______/ \\__|  \\__|\\_______/      / /\\ \\\n" +
-                "\\ \\/ /                                  $$\\   $$ |                                                                                 $$\\   $$ |                                   \\ \\/ /\n" +
-                " \\/ /                                   \\$$$$$$  |                                                                                 \\$$$$$$  |                                    \\/ / \n" +
-                " / /\\                                    \\______/                                                                                   \\______/                                     / /\\ \n" +
-                "/ /\\ \\                                                                                                                                                                          / /\\ \\\n" +
-                "\\ \\/ /                                                                                                                                                                          \\ \\/ /\n" +
-                " \\/ /                                                                                                                                                                            \\/ / \n" +
-                " / /\\.--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--./ /\\ \n" +
-                "/ /\\ \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\/\\ \\\n" +
-                "\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `' /\n" +
-                " `--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--' ");
-        System.out.println("1 - Create a character");
-        System.out.println("2 - Display character informations");
-        System.out.println("3 - Exit game");
         Scanner scan = new Scanner(System.in);
+        System.out.println("Welcome to Dungeons and Dragons \uD83C\uDFF0 \uD83C\uDFB2 \uD83D\uDC32");
+        System.out.println("1 - Create a character");
+        System.out.println("2 - Start a new game");
+        System.out.println("3 - Exit game");
+        System.out.print("Enter your choice: ");
+
         int choice = scan.nextInt();
-        scan.nextLine();  // Pour consommer le saut de ligne
 
         switch (choice) {
             case 1:
-                createCharacterMenu();
+                createCharacterMenu(); // Affiche le menu de création de personnage
                 break;
             case 2:
-                displayCharacterInfo();
+                startGameMenu(); // Démarre la partie
                 break;
             case 3:
-                System.out.println("Goodbye!");
+                System.out.println("Exiting the game. Goodbye!");
                 break;
             default:
                 System.out.println("\n" +
@@ -67,32 +39,39 @@ public class Menu {
         }
     }
 
-    private void displayCharacterInfo() {
-        // Cette méthode affichera les informations du personnage (implémentée dans la classe Game)
-//        Game.displayCharacterInfo();
-        displayMainMenu();  // Retour au menu principal
-    }
 
 //Méthode pour créer un personnage
 
     private void createCharacterMenu() {
-        System.out.println("Create a new character !");
-        System.out.println("What is the name of our character ?");
         Scanner scan = new Scanner(System.in);
+
+        System.out.println("Creating a new character !");
+        System.out.println("What is the name of your character ?");
         String name = scan.nextLine();
 
 
-        System.out.println("What type for your character, warrior or magician ?");
+        System.out.println("Which type is your character, Warrior or Magician ?");
         String type = scan.nextLine();
 
         Character character = new Character(name, type);  // Créer un nouveau personnage
-//    game.setCharacter(character);  // Assigner le personnage à l'instance de Game
+        game.setPlayer(character);  // Assigner le personnage à l'instance de Game
 
-        System.out.println("Character created successfully! !");
+        System.out.println("Character created successfully! ! \n");
         System.out.println(character);  // Appelle le toString() de Character pour afficher les infos
 
         // Retour au menu principal après création
         displayMainMenu();
     }
-}
 
+
+// Méthode pour démarrer la partie
+
+    public void startGameMenu() {
+        if (game.getPlayer() == null) {
+            System.out.println("You must create a character before starting the game!");
+        } else {
+            System.out.println("\nStarting the game...");
+            game.startGame();  // Appelle la méthode startGame dans Game pour démarrer
+        }
+    }
+}
