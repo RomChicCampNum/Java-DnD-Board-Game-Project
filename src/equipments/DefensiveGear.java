@@ -1,11 +1,13 @@
-public class DefensiveGear {
+package equipments;
 
-    private String name;
-    private String type;
-    private int level;
+public abstract class DefensiveGear {
+
+    protected String name;
+    protected String type;
+    protected int level;
 
 
-    // Constructeur principal DefensiveGear
+    // Constructeur principal equipments.DefensiveGear
     public DefensiveGear(String name, String type, int level) {
         this.name = name;
         this.type = type;

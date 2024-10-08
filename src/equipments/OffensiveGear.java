@@ -1,10 +1,12 @@
-public class OffensiveGear {
+package equipments;
 
-    private String name;
-    private String type;
-    private int level;
+public abstract class OffensiveGear {
 
-    // Constructeur principal OffensiveGear
+    protected String name;
+    protected String type;
+    protected int level;
+
+    // Constructeur principal equipments.OffensiveGear
     public OffensiveGear(String name, String type, int level) {
         this.name = name;
         this.type = type;
@@ -37,7 +39,7 @@ public class OffensiveGear {
         this.level = level;
     }
 
-    // Méthode toString pour afficher les informations du OffensiveGear
+    // Méthode toString pour afficher les informations du equipments.OffensiveGear
     public String toString() {
         return "\uD83D\uDDE1\uFE0F: " + this.name;
     }

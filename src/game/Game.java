@@ -1,5 +1,16 @@
-import java.awt.*;
-import java.util.Scanner;
+package game;
+
+import characters.Character;
+import characters.Warrior;
+import characters.Magician;
+import equipments.OffensiveGear;
+import equipments.Weapon;
+import equipments.Shield;
+import equipments.DefensiveGear;
+import equipments.Spell;
+import equipments.Potion;
+import game.Menu;
+
 import java.util.Random;
 
 public class Game {
@@ -11,7 +22,7 @@ public class Game {
 
     // Constructeur
     public Game() {
-        this.menu = new Menu(this); // L'instance de Menu
+        this.menu = new Menu(this); // L'instance de game.Menu
     }
 
     public void setPlayer(Character player) {
@@ -31,7 +42,7 @@ public class Game {
                 case 1:
                     Character character = menu.createCharacterMenu();  // Créer un personnage
                     setPlayer(character);  // Affecter à l'instance
-                    System.out.println("\nCharacter created successfully!\n" + character);  // Affichage dans Menu
+                    System.out.println("\nCharacter created successfully!\n" + character);  // Affichage dans game.Menu
                     break;
                 case 2:
                     if (player == null) {

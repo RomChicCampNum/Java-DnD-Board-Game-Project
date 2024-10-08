@@ -26,6 +26,6 @@ Le joueur peut choisir un personnage entre deux classes : **Guerrier** ou **Magi
 
 ## Screenshots
 
-![Start Menu and character creation](https://github.com/user-attachments/assets/7d6d7917-05c7-4e55-862c-e945f4c61634)
+![Start game.Menu and character creation](https://github.com/user-attachments/assets/7d6d7917-05c7-4e55-862c-e945f4c61634)
 
-![Game party](https://github.com/user-attachments/assets/0eceacd0-641d-441d-acfb-62205345c903)
+![game party](https://github.com/user-attachments/assets/0eceacd0-641d-441d-acfb-62205345c903)
