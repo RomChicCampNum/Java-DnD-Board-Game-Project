@@ -6,8 +6,8 @@ import equipments.Shield;
 public class Warrior extends Character {
     public Warrior (String name, String type) {
         super(name, type);
-        this.setHp(6);
-        this.setStrength(15);
+        this.setHp(10);
+        this.setStrength(10);
         this.setOffensiveGear(new Weapon());
         this.setDefensiveGear(new Shield());
     }

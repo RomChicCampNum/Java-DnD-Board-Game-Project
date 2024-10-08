@@ -1,15 +1,6 @@
 package game;
 
 import characters.Character;
-import characters.Warrior;
-import characters.Magician;
-import equipments.OffensiveGear;
-import equipments.Weapon;
-import equipments.Shield;
-import equipments.DefensiveGear;
-import equipments.Spell;
-import equipments.Potion;
-import game.Menu;
 
 import java.util.Random;
 
@@ -85,10 +76,18 @@ public class Game {
         int diceRoll = rollDice();
         boardPosition += diceRoll;
 
-        if (boardPosition >= boardSize) {
-            boardPosition = boardSize;  // Empêcher de dépasser la case finale
+        try {
+            // Si la position dépasse le plateau, une exception est lancée
+            if (boardPosition > boardSize) {
+                int excess = boardPosition - boardSize;
+                throw new CharacterOutsideOfBoardException(excess);
+            }
+        } catch (CharacterOutsideOfBoardException e) {
+            System.out.println(e.getMessage());  // Message de l'exception
+            boardPosition = boardSize - (boardPosition - boardSize);  // Reculer d'autant de cases
         }
-        menu.showMoveMessage(diceRoll, boardPosition, boardSize);  // Message de déplacement
+
+        menu.showMoveMessage(diceRoll, boardPosition, boardSize);
     }
 
     // Lancer un dé virtuel

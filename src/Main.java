@@ -6,3 +6,4 @@ public class Main {
         game.start(); // Démarre le jeu en affichant le menu
     }
 }
+

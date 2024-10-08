@@ -49,7 +49,7 @@ public class Menu {
         if (type.equalsIgnoreCase("Warrior")) {
             OffensiveGear weapon = new Weapon();  // Creating a weapon
             Shield shield = new Shield();  // Creating a shield
-            return new Warrior(name,type);  // Return a new warrior character
+            return new Warrior(name, type);  // Return a new warrior character
 
         } else if (type.equalsIgnoreCase("Magician")) {
             Spell spell = new Spell();  // Creating a spell
@@ -62,37 +62,36 @@ public class Menu {
         }
     }
 
-        // Méthode pour proposer de rejouer ou quitter
-        public boolean replayMenu () {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Do you want to play again? (yes/no)");
-            String response = scanner.nextLine().toLowerCase();
-            return response.equals("yes");
-        }
+    // Méthode pour proposer de rejouer ou quitter
+    public boolean replayMenu() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Do you want to play again? (yes/no)");
+        String response = scanner.nextLine().toLowerCase();
+        return response.equals("yes");
+    }
 
-        // Message de début de partie
-        public void showStartGameMessage (Character player,int boardPosition, int boardSize){
-            System.out.println("\n" + player.getName() + " is starting on case " + boardPosition + " / " + boardSize);
-        }
+    // Message de début de partie
+    public void showStartGameMessage(Character player, int boardPosition, int boardSize) {
+        System.out.println("\n" + player.getName() + " is starting on case " + boardPosition + " / " + boardSize);
+    }
 
-        // Message de déplacement
-        public void showMoveMessage ( int diceRoll, int boardPosition, int boardSize){
-            System.out.println("You rolled a " + diceRoll + "! You are now on case " + boardPosition + " / " + boardSize);
-        }
+    // Message de déplacement
+    public void showMoveMessage(int diceRoll, int boardPosition, int boardSize) {
+        System.out.println("You rolled a " + diceRoll + "! You are now on case " + boardPosition + " / " + boardSize);
+    }
 
-        // Message de victoire
-        public void showVictoryMessage(Character player){
-            System.out.println("\n✨ Congratulations " + player.getName() + ", you reached the end of the Dungeon! ✨\n");
-        }
+    // Message de victoire
+    public void showVictoryMessage(Character player) {
+        System.out.println("\n✨ Congratulations " + player.getName() + ", you reached the end of the Dungeon! ✨\n");
+    }
 
-        //Message de fin de partie
-        public void showExitGameMessage () {
-            System.out.println("\nExiting the Dungeon, return to main menu. \n");
-        }
+    //Message de fin de partie
+    public void showExitGameMessage() {
+        System.out.println("\nExiting the Dungeon, return to main menu. \n");
+    }
 
-        // Message de fin
-        public void showExitMessage () {
-            System.out.println("\nExiting the game. Goodbye!\n");
-        }
+    // Message de fin
+    public void showExitMessage() {
+        System.out.println("\nExiting the game. Goodbye!\n");
     }
 }
