@@ -1,17 +1,17 @@
 import java.sql.SQLOutput;
 import java.util.*;
+import java.util.Scanner;
 
 public class Menu {
 
     private Game game;
 
-    //Constructeur qui prend l'instance du jeu pou intéragir avec
     public Menu(Game game) {
         this.game = game;
     }
 
     // Méthode principale du menu
-    public void displayMainMenu() {
+    public int displayMainMenu() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Dungeons and Dragons \uD83C\uDFF0 \uD83C\uDFB2 \uD83D\uDC32");
         System.out.println("1 - Create a character");
@@ -20,58 +20,53 @@ public class Menu {
         System.out.print("Enter your choice: ");
 
         int choice = scan.nextInt();
-
-        switch (choice) {
-            case 1:
-                createCharacterMenu(); // Affiche le menu de création de personnage
-                break;
-            case 2:
-                startGameMenu(); // Démarre la partie
-                break;
-            case 3:
-                System.out.println("Exiting the game. Goodbye!");
-                break;
-            default:
-                System.out.println("\n" +
-                        "Invalid choice, try again.");
-                displayMainMenu();  // Relancer le menu si choix incorrect
-                break;
-        }
+        return choice;  // Retourne le choix à la classe Game pour la logique
     }
 
-
-//Méthode pour créer un personnage
-
-    private void createCharacterMenu() {
+    // Méthode pour créer un personnage
+    public Character createCharacterMenu() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Creating a new character !");
+        System.out.println("\nCreating a new character ! \n");
         System.out.println("What is the name of your character ?");
         String name = scan.nextLine();
-
 
         System.out.println("Which type is your character, Warrior or Magician ?");
         String type = scan.nextLine();
 
-        Character character = new Character(name, type);  // Créer un nouveau personnage
-        game.setPlayer(character);  // Assigner le personnage à l'instance de Game
-
-        System.out.println("Character created successfully! ! \n");
-        System.out.println(character);  // Appelle le toString() de Character pour afficher les infos
-
-        // Retour au menu principal après création
-        displayMainMenu();
+        return new Character(name, type);  // Retourne un nouveau personnage à Game
     }
 
+    // Méthode pour proposer de rejouer ou quitter
+    public boolean replayMenu() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Do you want to play again? (yes/no)");
+        String response = scanner.nextLine().toLowerCase();
+        return response.equals("yes");
+    }
 
-// Méthode pour démarrer la partie
+    // Message de début de partie
+    public void showStartGameMessage(Character player, int boardPosition, int boardSize) {
+        System.out.println("\n" + player.getName() + " is starting on case " + boardPosition + " / " + boardSize);
+    }
 
-    public void startGameMenu() {
-        if (game.getPlayer() == null) {
-            System.out.println("You must create a character before starting the game!");
-        } else {
-            System.out.println("\nStarting the game...");
-            game.startGame();  // Appelle la méthode startGame dans Game pour démarrer
-        }
+    // Message de déplacement
+    public void showMoveMessage(int diceRoll, int boardPosition, int boardSize) {
+        System.out.println("You rolled a " + diceRoll + "! You are now on case " + boardPosition + " / " + boardSize);
+    }
+
+    // Message de victoire
+    public void showVictoryMessage(Character player) {
+        System.out.println("\n✨ Congratulations " + player.getName() + ", you reached the end of the Dungeon! ✨\n");
+    }
+
+    //Message de fin de partie
+    public void showExitGameMessage() {
+        System.out.println("\nExiting the Dungeon, return to main menu. \n");
+    }
+
+    // Message de fin
+    public void showExitMessage() {
+        System.out.println("\nExiting the game. Goodbye!\n");
     }
 }

@@ -61,7 +61,7 @@ public class Character {
                 "\nEquipment: " +
                 "\n" + this.offensiveGear +
                 "\n" + this.defensiveGear +
-                "\n\n";
+                "\n";
     }
 }
 
