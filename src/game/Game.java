@@ -1,6 +1,8 @@
 package game;
 
+import board.Board;
 import characters.Character;
+import board.Case;
 
 import java.util.Random;
 
@@ -8,12 +10,17 @@ public class Game {
 
     private Character player;
     private Menu menu;
+    private Board board; // nouveau plateau
     private int boardPosition;
-    private int boardSize = 64;
+    private int boardSize;
+private int diceFace;
 
     // Constructeur
     public Game() {
-        this.menu = new Menu(this); // L'instance de game.Menu
+        this.menu = new Menu(); // L'instance de game.Menu
+        this.board = new Board(); // Initialise le plateau
+        this.boardSize = board.getCases().size(); // Taill du plateau dépendant du nombre du cases
+        this.diceFace = 1;
     }
 
     public void setPlayer(Character player) {
@@ -82,17 +89,30 @@ public class Game {
                 int excess = boardPosition - boardSize;
                 throw new CharacterOutsideOfBoardException(excess);
             }
-        } catch (CharacterOutsideOfBoardException e) {
-            System.out.println(e.getMessage());  // Message de l'exception
+        } catch (CharacterOutsideOfBoardException excess) {
+            System.out.println(excess.getMessage());  // Message de l'exception
             boardPosition = boardSize - (boardPosition - boardSize);  // Reculer d'autant de cases
+             if (boardPosition < 0) {
+                 boardPosition = 0;
+             }
         }
 
+//      ANCIEN DEPLACEMENT
+//      menu.showMoveMessage(diceRoll, boardPosition, boardSize);
+
+        // Intéraction avec la case sur laquelle le joueur de trouve
+        Case currentCase = board.getCases().get(boardPosition - 1);
+        System.out.println("You enter in a new room");
+
         menu.showMoveMessage(diceRoll, boardPosition, boardSize);
+
+
     }
 
     // Lancer un dé virtuel
+
     private int rollDice() {
         Random rand = new Random();
-        return rand.nextInt(6) + 1;  // Résultat entre 1 et 6
+        return rand.nextInt(diceFace) + 1;  // Résultat entre 1 et 6
     }
 }

@@ -1,6 +1,8 @@
 package characters;
 
-import equipments.Weapon;
+import equipments.Club;
+import equipments.Mace;
+import equipments.Sword;
 import equipments.Shield;
 
 public class Warrior extends Character {
@@ -8,7 +10,7 @@ public class Warrior extends Character {
         super(name, type);
         this.setHp(10);
         this.setStrength(10);
-        this.setOffensiveGear(new Weapon());
+        this.setOffensiveGear(new Club());
         this.setDefensiveGear(new Shield());
     }
 

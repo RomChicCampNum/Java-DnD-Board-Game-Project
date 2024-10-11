@@ -1,17 +1,23 @@
 package equipments;
 
-public abstract class DefensiveGear {
+import board.Case;
+import characters.Character;
+
+public abstract class DefensiveGear implements Case {
 
     protected String name;
     protected String type;
     protected int level;
+    protected String emoji;
 
 
     // Constructeur principal equipments.DefensiveGear
-    public DefensiveGear(String name, String type, int level) {
+    public DefensiveGear(String name, String type, int level, String emoji) {
         this.name = name;
         this.type = type;
         this.level = level;
+        this.emoji = emoji;
+
     }
 
     // Getters
@@ -40,9 +46,15 @@ public abstract class DefensiveGear {
         this.level = level;
     }
 
+    @Override
+    public String interact(Character character) {
+
+        return "";
+    }
+
     // Méthode toString pour afficher les informations du DeffensiveGear
     public String toString() {
-        return "\uD83D\uDEE1\uFE0F: " + this.name;
+        return "\uD83D\uDEE1\uFE0F: " + this.name + this.emoji;
     }
 }
 

@@ -3,7 +3,12 @@ package characters;
 import equipments.DefensiveGear;
 import equipments.OffensiveGear;
 import equipments.Shield;
-import equipments.Weapon;
+import equipments.Club;
+import equipments.Mace;
+import equipments.Sword;
+import equipments.Lightningbolt;
+import equipments.Frostbolt;
+import equipments.Fireball;
 
 public abstract class Character {
 
@@ -88,9 +93,9 @@ public abstract class Character {
         String emoji = (this.type.equals("Warrior")) ? "⚔️" : "🧙";
 
         return "Name: " + this.name +
-                "\nType: " + this.type + emoji +
-                "\n HP ❤\uFE0F: " + this.hp +
-                "\nATQ ⚔\uFE0F: " + this.strength +
+                "\nType: " + this.type + " " + emoji +
+                "\nHP ❤\uFE0F: " + this.hp +
+                "\nAttack Power ⚔\uFE0F: " + this.strength +
                 "\nEquipment: " +
                 "\n" + this.offensiveGear +
                 "\n" + this.defensiveGear +

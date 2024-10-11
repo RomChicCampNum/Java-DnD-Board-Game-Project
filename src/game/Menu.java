@@ -3,21 +3,16 @@ package game;
 import characters.Character;
 import characters.Warrior;
 import characters.Magician;
-import equipments.OffensiveGear;
-import equipments.Weapon;
-import equipments.Shield;
-import equipments.DefensiveGear;
-import equipments.Spell;
-import equipments.Potion;
+import equipments.*;
+
 
 import java.util.Scanner;
 
 public class Menu {
 
-    private Game game;
 
-    public Menu(Game game) {
-        this.game = game;
+    public Menu() {
+
     }
 
     // Méthode principale du menu
@@ -47,13 +42,9 @@ public class Menu {
         // Créer une personnage basé sur le type
 
         if (type.equalsIgnoreCase("Warrior")) {
-            OffensiveGear weapon = new Weapon();  // Creating a weapon
-            Shield shield = new Shield();  // Creating a shield
             return new Warrior(name, type);  // Return a new warrior character
 
         } else if (type.equalsIgnoreCase("Magician")) {
-            Spell spell = new Spell();  // Creating a spell
-            Potion potion = new Potion();  // Creating a potion
             return new Magician(name, type);  // Return a new magician character
 
         } else {
