@@ -68,7 +68,7 @@ public class Menu {
 
     // Message de déplacement
     public void showMoveMessage(int diceRoll, int boardPosition, int boardSize) {
-        System.out.println("You rolled a " + diceRoll + "! You are now on case " + boardPosition + " / " + boardSize);
+        System.out.println("\nYou rolled a " + diceRoll + "! You are now on case " + boardPosition + " / " + boardSize);
     }
 
     // Message de victoire

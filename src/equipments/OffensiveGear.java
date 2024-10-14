@@ -48,6 +48,10 @@ public abstract class OffensiveGear implements Case {
         this.emoji = emoji;
     }
 
+    public String getEmoji() {
+        return emoji;
+    }
+
     @Override
     public String interact(Character character) {
 
@@ -56,6 +60,6 @@ public abstract class OffensiveGear implements Case {
 
     // Méthode toString pour afficher les informations du equipments.OffensiveGear
     public String toString() {
-        return "\uD83D\uDDE1\uFE0F: " + this.name + this.emoji;
+        return this.name + " " + this.emoji;
     }
 }

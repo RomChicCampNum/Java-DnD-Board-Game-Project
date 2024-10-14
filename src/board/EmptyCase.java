@@ -6,6 +6,7 @@ public class EmptyCase implements Case {
 
     @Override
     public String interact(Character character) {
-        return "You enter an empty room. There's nothing there but rubbish and odds and ends.";
+        System.out.println("You enter an empty room. There's nothing there but rubbish and odds and ends.\n");
+        return "emptycase";
     }
 }

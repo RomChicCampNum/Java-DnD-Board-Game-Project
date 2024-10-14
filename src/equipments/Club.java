@@ -2,6 +2,8 @@ package equipments;
 
 import characters.Character;
 
+import java.util.Objects;
+
 public class Club extends OffensiveGear {
 
     public Club() {
@@ -12,7 +14,15 @@ public class Club extends OffensiveGear {
 
     @Override
     public String interact(Character character) {
-        return "This room contains a weapon rack, you pick a " + getName() + " \uD83D\uDD28";
+        if (Objects.equals(character.getType(), "Warrior")) {
+            character.setOffensiveGear(this);
+            System.out.println("This room contains a weapon rack, you pick a " + getName()  + " " + getEmoji() +
+                    "\n Your Attack Power is now " + character.getStrength() + getLevel());
+            return "equipGear";
+        } else {
+            System.out.println("This room contains a weapon rack, ou can't equip weapons, you keep moving until you reach the next room");
+            return "dontEquipGear";
+        }
     }
 }
 

@@ -4,31 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbae799e-ccee-47e7-b7bd-1c2af19f2b97" name="Changes" comment="Adding exception CharacterOutsideOfBoardException">
-      <change afterPath="$PROJECT_DIR$/src/board/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/board/Case.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/board/EmptyCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemies/Drake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemies/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemies/Gobelin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemies/Sorcerer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/equipments/BigPotion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/equipments/Club.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/equipments/Fireball.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/equipments/Lightningbolt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/equipments/Mace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/equipments/Ring.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/equipments/Sword.java" afterDir="false" />
+    <list default="true" id="cbae799e-ccee-47e7-b7bd-1c2af19f2b97" name="Changes" comment="Adding enemies and case for board, update equipments, ready to go on phase 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/board/EmptyCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/EmptyCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/characters/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/characters/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/characters/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/characters/Magician.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/characters/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/characters/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enemies/Drake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Drake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enemies/Gobelin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Gobelin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enemies/Sorcerer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Sorcerer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/equipments/BigPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/BigPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/equipments/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Club.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/equipments/DefensiveGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/DefensiveGear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/equipments/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Fireball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/equipments/Frostbolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Frostbolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/equipments/Lightningbolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Lightningbolt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/equipments/Mace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Mace.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/equipments/OffensiveGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/OffensiveGear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/equipments/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Potion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Shield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Frostbolt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Weapon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/equipments/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Sword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Menu.java" afterDir="false" />
     </list>
@@ -77,26 +72,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;627a0cdb&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/romain.chica/IdeaProjects/Projet Donjons and Dragons/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "e7e07ee8",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/romain.chica/IdeaProjects/Projet Donjons and Dragons/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="equipments" />
@@ -143,7 +138,8 @@
       <workItem from="1728463943722" duration="15803000" />
       <workItem from="1728546074010" duration="20952000" />
       <workItem from="1728630187355" duration="16894000" />
-      <workItem from="1728650708579" duration="747000" />
+      <workItem from="1728650708579" duration="6821000" />
+      <workItem from="1728889612197" duration="22454000" />
     </task>
     <task id="LOCAL-00001" summary="Character creation working">
       <option name="closed" value="true" />
@@ -185,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728397868666</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adding enemies and case for board, update equipments, ready to go on phase 5">
+      <option name="closed" value="true" />
+      <created>1728651505230</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728651505230</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +223,23 @@
     <MESSAGE value="Board and MovePlayer features working" />
     <MESSAGE value="Refactoring Game and Menu to have all the logic on Game and only interface with the player on Menu" />
     <MESSAGE value="Adding exception CharacterOutsideOfBoardException" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding exception CharacterOutsideOfBoardException" />
+    <MESSAGE value="Adding enemies and case for board, update equipments, ready to go on phase 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding enemies and case for board, update equipments, ready to go on phase 5" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/enemies/Enemy.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/enemies/Enemy.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

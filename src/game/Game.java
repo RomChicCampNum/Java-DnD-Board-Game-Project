@@ -1,8 +1,12 @@
 package game;
 
 import board.Board;
+import board.EmptyCase;
 import characters.Character;
 import board.Case;
+import enemies.Enemy;
+import equipments.OffensiveGear;
+import equipments.Potion;
 
 import java.util.Random;
 
@@ -13,14 +17,14 @@ public class Game {
     private Board board; // nouveau plateau
     private int boardPosition;
     private int boardSize;
-private int diceFace;
+    private int diceFace;
 
     // Constructeur
     public Game() {
         this.menu = new Menu(); // L'instance de game.Menu
         this.board = new Board(); // Initialise le plateau
-        this.boardSize = board.getCases().size(); // Taill du plateau dépendant du nombre du cases
-        this.diceFace = 1;
+        this.boardSize = board.getCases().size(); // Taille du plateau dépendant du nombre du cases
+        this.diceFace = 2; // Dé à x Faces
     }
 
     public void setPlayer(Character player) {
@@ -64,11 +68,15 @@ private int diceFace;
         boardPosition = 1;
         menu.showStartGameMessage(player, boardPosition, boardSize);  // Message de début
 
-        while (boardPosition < boardSize) {
-            movePlayer();  // Gérer le déplacement du joueur
-        }
+//        while (boardPosition < boardSize) {
+            try {
+                movePlayer();  // Gérer le déplacement du joueur
+            } catch (CharacterOutsideOfBoardException e) {
+                menu.showVictoryMessage(player);  // Message de victoire;
+            }
+//        }
 
-        menu.showVictoryMessage(player);  // Message de victoire
+
 
         // Proposer de rejouer ou quitter
         if (menu.replayMenu()) {
@@ -79,35 +87,48 @@ private int diceFace;
     }
 
     // Déplacement du joueur sur le plateau
-    public void movePlayer() {
+    public void movePlayer() throws CharacterOutsideOfBoardException {
         int diceRoll = rollDice();
         boardPosition += diceRoll;
 
-        try {
+//        try {
             // Si la position dépasse le plateau, une exception est lancée
             if (boardPosition > boardSize) {
                 int excess = boardPosition - boardSize;
                 throw new CharacterOutsideOfBoardException(excess);
             }
-        } catch (CharacterOutsideOfBoardException excess) {
-            System.out.println(excess.getMessage());  // Message de l'exception
-            boardPosition = boardSize - (boardPosition - boardSize);  // Reculer d'autant de cases
-             if (boardPosition < 0) {
-                 boardPosition = 0;
-             }
-        }
-
-//      ANCIEN DEPLACEMENT
-//      menu.showMoveMessage(diceRoll, boardPosition, boardSize);
-
-        // Intéraction avec la case sur laquelle le joueur de trouve
-        Case currentCase = board.getCases().get(boardPosition - 1);
-        System.out.println("You enter in a new room");
-
+//        } catch (CharacterOutsideOfBoardException excess) {
+//            System.out.println(excess.getMessage());  // Message de l'exception
+//            boardPosition = boardSize - (boardPosition - boardSize);  // Reculer d'autant de cases
+//            if (boardPosition < 0) {
+//                boardPosition = 0;
+//            }
+//        }
+        // Afficher le message du déplacement
         menu.showMoveMessage(diceRoll, boardPosition, boardSize);
 
+        // Interaction avec la case sur laquelle le joueur se trouve
+        Case currentCase = board.getCases().get(boardPosition - 1);
+        System.out.println("You enter in a new room...");
 
+        // Gérer les interactions en fonction du type de la case
+        currentCase.interact(player);
+//        if (currentCase instanceof Enemy) {
+//            Enemy enemy = (Enemy) currentCase;
+//            enemy.interact(player);  // Interaction avec un ennemi
+//        } else if (currentCase instanceof OffensiveGear) {
+//            OffensiveGear gear = (OffensiveGear) currentCase;
+//            gear.interact(player);
+//        } else if (currentCase instanceof Potion) {
+//            Potion potion = (Potion) currentCase;
+//            potion.interact(player);  // Utiliser une potion
+//        } else if (currentCase instanceof EmptyCase ) {
+//            EmptyCase emptyCase = (EmptyCase) currentCase;
+//            emptyCase.interact(player);
+//        }
+        movePlayer();
     }
+
 
     // Lancer un dé virtuel
 

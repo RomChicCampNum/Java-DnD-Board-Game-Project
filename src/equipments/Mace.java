@@ -14,9 +14,12 @@ public class Mace extends OffensiveGear {
     public String interact(Character character) {
         if (Objects.equals(character.getType(), "Warrior")) {
             character.setOffensiveGear(this);
-            return "This room contains a weapon rack, you pick a " + getName() + "\uD83D\uDD28";
+            System.out.println("This room contains a weapon rack, you pick a " + getName()  + " " + getEmoji() +
+                    "\n Your Attack Power is now " + character.getStrength() + getLevel());
+            return "equipGear";
         } else {
-            return "This room contains a weapon rack, ou can't equip weapons, you keep moving until you reach the next room";
+            System.out.println("This room contains a weapon rack, ou can't equip weapons, you keep moving until you reach the next room");
+            return "dontEquipGear";
         }
     }
 }

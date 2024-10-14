@@ -33,8 +33,16 @@ public class Potion implements Case {
         return name + " " + healpower;
     }
 
+    public String getEmoji() {
+        return emoji;
+    }
+
     @Override
     public String interact(Character character) {
-        return "This room contains a little cabinet, you grab a " + name + " \uD83E\uDDEA";
+        character.setHp(character.getHp() + healpower);
+        System.out.println("This room contains a little cabinet, you grab a " + name  + " " + getEmoji() +
+                "\nYou  drink it and heal yourself!" +
+                "\nYour HP are now: " + character.getHp() + " ❤\uFE0F \n");
+        return "drinkPotion";
     }
 }

@@ -54,7 +54,7 @@ public abstract class DefensiveGear implements Case {
 
     // Méthode toString pour afficher les informations du DeffensiveGear
     public String toString() {
-        return "\uD83D\uDEE1\uFE0F: " + this.name + this.emoji;
+        return this.name + " " + this.emoji;
     }
 }
 

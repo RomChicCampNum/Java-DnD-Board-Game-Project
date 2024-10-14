@@ -11,7 +11,7 @@ public class Magician extends Character {
         super(name, type);
         this.setHp(6);
         this.setStrength(15);
-        this.setOffensiveGear(new Lightningbolt());
+        this.setOffensiveGear(new Frostbolt());
         this.setDefensiveGear(new Ring());
     }
 }

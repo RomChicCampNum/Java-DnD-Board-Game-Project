@@ -1,14 +1,6 @@
 package characters;
 
-import equipments.DefensiveGear;
-import equipments.OffensiveGear;
-import equipments.Shield;
-import equipments.Club;
-import equipments.Mace;
-import equipments.Sword;
-import equipments.Lightningbolt;
-import equipments.Frostbolt;
-import equipments.Fireball;
+import equipments.*;
 
 public abstract class Character {
 
@@ -18,6 +10,7 @@ public abstract class Character {
     protected int strength;
     protected DefensiveGear defensiveGear;
     protected OffensiveGear offensiveGear;
+
 
 
     // Constructeur par défaut
@@ -97,9 +90,8 @@ public abstract class Character {
                 "\nHP ❤\uFE0F: " + this.hp +
                 "\nAttack Power ⚔\uFE0F: " + this.strength +
                 "\nEquipment: " +
-                "\n" + this.offensiveGear +
-                "\n" + this.defensiveGear +
+                "\n" + "\uD83D\uDDE1\uFE0F: " + this.offensiveGear +
+                "\n" + "\uD83D\uDEE1\uFE0F: " + this.defensiveGear +
                 "\n";
     }
 }
-
