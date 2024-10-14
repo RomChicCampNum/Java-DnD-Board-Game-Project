@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbae799e-ccee-47e7-b7bd-1c2af19f2b97" name="Changes" comment="Adding enemies and case for board, update equipments, ready to go on phase 5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/EmptyCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/EmptyCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/characters/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/characters/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/characters/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/characters/Magician.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enemies/Drake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Drake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enemies/Gobelin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Gobelin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enemies/Sorcerer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enemies/Sorcerer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/BigPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/BigPotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Club.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/DefensiveGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/DefensiveGear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Fireball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Frostbolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Frostbolt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Lightningbolt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Lightningbolt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Mace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Mace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/OffensiveGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/OffensiveGear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Potion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/equipments/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipments/Sword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="cbae799e-ccee-47e7-b7bd-1c2af19f2b97" name="Changes" comment="Phase 5-2 ok. 4 cases, enemies, gear and potion cases working. Ready to implement random board !" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +55,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "e7e07ee8",
+    "git-widget-placeholder": "4cc74373",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -139,7 +117,7 @@
       <workItem from="1728546074010" duration="20952000" />
       <workItem from="1728630187355" duration="16894000" />
       <workItem from="1728650708579" duration="6821000" />
-      <workItem from="1728889612197" duration="22454000" />
+      <workItem from="1728889612197" duration="22770000" />
     </task>
     <task id="LOCAL-00001" summary="Character creation working">
       <option name="closed" value="true" />
@@ -189,7 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728651505230</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Phase 5-2 ok. 4 cases, enemies, gear and potion cases working. Ready to implement random board !">
+      <option name="closed" value="true" />
+      <created>1728916656805</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728916656805</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Phase 5-2 ok. 4 cases, enemies, gear and potion cases working. Ready to implement random board !">
+      <option name="closed" value="true" />
+      <created>1728916802847</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728916802847</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +218,9 @@
     <MESSAGE value="Refactoring Game and Menu to have all the logic on Game and only interface with the player on Menu" />
     <MESSAGE value="Adding exception CharacterOutsideOfBoardException" />
     <MESSAGE value="Adding enemies and case for board, update equipments, ready to go on phase 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding enemies and case for board, update equipments, ready to go on phase 5" />
+    <MESSAGE value="V2 Phase 5-2 ok. 4 cases, enemies, gear and potion cases working. Ready to implement random board !" />
+    <MESSAGE value="Phase 5-2 ok. 4 cases, enemies, gear and potion cases working. Ready to implement random board !" />
+    <option name="LAST_COMMIT_MESSAGE" value="Phase 5-2 ok. 4 cases, enemies, gear and potion cases working. Ready to implement random board !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
