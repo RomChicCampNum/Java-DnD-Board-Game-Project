@@ -12,18 +12,34 @@ public abstract class Character {
     protected OffensiveGear offensiveGear;
 
 
+    /**
+     * Classe abstraite représentant un personnage dans le jeu.
+     * Cette classe contient les attributs communs à tous les types de personnages jouables
+     * ainsi que des méthodes pour interagir avec ces attributs.
+     */
 
-    // Constructeur par défaut
+    /**
+     * Constructeur par défaut, crée un personnage avec le nom "NPC" et type par défaut "Warrior".
+     */
     public Character() {
         this("NPC"); // Nom par défaut
     }
 
-    // Constructeur secondaire Character
+    /**
+     * Constructeur secondaire, crée un personnage avec un nom personnalisé et type par défaut "Warrior".
+     *
+     * @param name Le nom du personnage.
+     */
     public Character(String name) {
         this(name, "Warrior");
     }
 
-    // Constructeur principal avec équipements
+    /**
+     * Constructeur principal, crée un personnage avec un nom et un type spécifiés.
+     *
+     * @param name Le nom du personnage.
+     * @param type Le type de personnage (ex: Warrior, Magician).
+     */
     public Character(String name, String type) {
         this.name = name;
         this.type = type;
@@ -78,6 +94,13 @@ public abstract class Character {
     public void setOffensiveGear(OffensiveGear offensiveGear) {
         this.offensiveGear = offensiveGear;
     }
+
+    /**
+     * Retourne une représentation sous forme de chaîne de caractères des attributs du personnage,
+     * incluant son nom, type, points de vie, force, et équipements offensif et défensif.
+     *
+     * @return Une chaîne de caractères représentant le personnage.
+     */
 
     // Méthode toString pour afficher les informations du personnage
     public String toString()
