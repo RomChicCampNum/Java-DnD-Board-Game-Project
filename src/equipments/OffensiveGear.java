@@ -3,12 +3,28 @@ package equipments;
 import board.Case;
 import characters.Character;
 
+/**
+ * Classe abstraite représentant un équipement offensif dans le jeu.
+ * Cette classe sert de base pour tous les types d'équipements offensifs
+ * que les personnages peuvent utiliser, et elle implémente l'interface Case.
+ */
+
+
 public abstract class OffensiveGear implements Case {
 
     protected String name;
     protected String type;
     protected int level;
     protected String emoji;
+
+    /**
+     * Constructeur principal pour l'équipement offensif.
+     *
+     * @param name  Le nom de l'équipement.
+     * @param type  Le type d'équipement.
+     * @param level Le niveau de l'équipement.
+     * @param emoji L'emoji associé à l'équipement.
+     */
 
     // Constructeur principal equipments.OffensiveGear
     public OffensiveGear(String name, String type, int level, String emoji) {
@@ -18,7 +34,10 @@ public abstract class OffensiveGear implements Case {
         this.emoji = emoji;
     }
 
-    // Getters
+    /** Getters
+     */
+
+
     public String getName() {
         return name;
     }

@@ -1,11 +1,246 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
-autonumber
+package game {
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+    class Menu {
+        + Menu()
+        + int displayMainMenu()
+        + Character createCharacterMenu()
+        + boolean replayMenu()
+        + void showStartGameMessage(Character, int, int)
+        + void showMoveMessage(int, int, int)
+        + void showVictoryMessage(Character)
+        + void showExitGameMessage()
+        + void showExitMessage()
+    }
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+    class Game {
+        - Character player
+        - Menu menu
+        - Board board
+        - int boardPosition
+        - int boardSize
+        - int diceFace
+
+        + Game()
+        + void setPlayer(Character)
+        + Character getPlayer()
+        + void start()
+        + void startGame()
+        + void movePlayer() throws CharacterOutsideOfBoardException
+        + int rollDice()
+    }
+
+}
+
+package characters {
+
+    abstract class Character {
+        - String name
+        - String type
+        - int hp
+        - int strength
+        - DefensiveGear defensiveGear
+        - OffensiveGear offensiveGear
+
+        + Character()
+        + Character(String name)
+        + Character(String name, String type)
+        + String getName()
+        + void setName(String name)
+        + String getType()
+        + void setType(String type)
+        + int getHp()
+        + void setHp(int hp)
+        + int getStrength()
+        + void setStrength(int strength)
+        + DefensiveGear getDefensiveGear()
+        + void setDefensiveGear(DefensiveGear defensiveGear)
+        + OffensiveGear getOffensiveGear()
+        + void setOffensiveGear(OffensiveGear offensiveGear)
+        + String toString()
+    }
+
+    class Warrior extends Character {
+        + Warrior(String name, String type)
+    }
+
+    class Magician extends Character {
+        + Magician(String name, String type)
+    }
+}
+
+package equipments {
+
+    abstract class OffensiveGear {
+        - String name
+        - String type
+        - int level
+        - String emoji
+
+        + OffensiveGear(String name, String type, int level, String emoji)
+        + String getName()
+        + String getType()
+        + int getLevel()
+        + void setName(String name)
+        + void setType(String type)
+        + void setLevel(int level)
+        + String interact(Character character)
+        + String toString()
+    }
+
+    class Sword extends OffensiveGear {
+        + Sword()
+        + String interact(Character character)
+    }
+
+    class Mace extends OffensiveGear {
+        + Mace()
+        + String interact(Character character)
+    }
+
+    class Club extends OffensiveGear {
+        + Club()
+        + String interact(Character character)
+    }
+
+    class Frostbolt extends OffensiveGear {
+        + Frostbolt()
+        + String interact(Character character)
+    }
+
+    class Lightningbolt extends OffensiveGear {
+        + Lightningbolt()
+        + String interact(Character character)
+    }
+
+    class Fireball extends OffensiveGear {
+        + Fireball()
+        + String interact(Character character)
+    }
+
+    abstract class DefensiveGear {
+        - String name
+        - String type
+        - int level
+        - String emoji
+
+        + DefensiveGear(String name, String type, int level, String emoji)
+        + String getName()
+        + String getType()
+        + int getLevel()
+        + void setName(String name)
+        + void setType(String type)
+        + void setLevel(int level)
+        + String interact(Character character)
+        + String toString()
+    }
+
+    class Shield extends DefensiveGear {
+        + Shield()
+        + String interact(Character character)
+    }
+
+    class Ring extends DefensiveGear {
+        + Ring()
+        + String interact(Character character)
+    }
+
+    class Potion {
+        - String name
+        - int healpower
+        - String emoji
+
+        + Potion(String name, int healpower, String emoji)
+        + String getName()
+        + int getHealpower()
+        + String interact(Character character)
+        + String toString()
+    }
+
+    class BigPotion extends Potion {
+        + BigPotion()
+        + String interact(Character character)
+    }
+}
+
+package enemies {
+
+    interface Case {
+        + String interact(Character character)
+    }
+
+    abstract class Enemy implements Case {
+        - String type
+        - int hp
+        - int strength
+        - String emoji
+
+        + Enemy(String type, int hp, int strength, String emoji)
+        + String getType()
+        + int getHp()
+        + int getStrength()
+        + String getEmoji()
+        + String interact(Character character)
+        + String toString()
+    }
+
+    class Gobelin extends Enemy {
+        + Gobelin()
+        + String toString()
+    }
+
+    class Sorcerer extends Enemy {
+        + Sorcerer()
+        + String toString()
+    }
+
+    class Drake extends Enemy {
+        + Drake()
+        + String toString()
+    }
+}
+
+package board {
+
+    interface Case {
+        + String interact(Character character)
+    }
+
+    class Board {
+        - ArrayList<Case> cases
+        - int boardSize
+
+        + Board()
+        + ArrayList<Case> getCases()
+        + void initializeBoard()
+    }
+
+    class EmptyCase implements Case {
+        + String interact(Character character)
+    }
+}
+
+game.Menu "1" -- "1" game.Game : uses
+game.Game *-- characters.Character : uses
+game.Game *-- board.Board : has
+characters.Character <|-- characters.Warrior
+characters.Character <|-- characters.Magician
+characters.Character *-- equipments.DefensiveGear : uses
+characters.Character *-- equipments.OffensiveGear : uses
+equipments.OffensiveGear <|-- equipments.Sword
+equipments.OffensiveGear <|-- equipments.Mace
+equipments.OffensiveGear <|-- equipments.Club
+equipments.OffensiveGear <|-- equipments.Frostbolt
+equipments.OffensiveGear <|-- equipments.Lightningbolt
+equipments.OffensiveGear <|-- equipments.Fireball
+equipments.DefensiveGear <|-- equipments.Shield
+equipments.DefensiveGear <|-- equipments.Ring
+equipments.Potion <|-- equipments.BigPotion
+enemies.Enemy <|-- enemies.Gobelin
+enemies.Enemy <|-- enemies.Sorcerer
+enemies.Enemy <|-- enemies.Drake
+enemies.Enemy *-- board.Case : implements
+board.Case <|-- board.EmptyCase
+
 @enduml

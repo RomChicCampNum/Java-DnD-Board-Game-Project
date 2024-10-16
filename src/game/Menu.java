@@ -8,6 +8,11 @@ import equipments.*;
 
 import java.util.Scanner;
 
+/**
+ * Classe représentant le menu du jeu.
+ * Gère l'affichage des options et les interactions avec le joueur.
+ */
+
 public class Menu {
 
 
@@ -15,7 +20,12 @@ public class Menu {
 
     }
 
-    // Méthode principale du menu
+    /**
+     * Affiche le menu principal et retourne le choix du joueur.
+     *
+     * @return Le choix du joueur comme un entier.
+     */
+
     public int displayMainMenu() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to Dungeons and Dragons \uD83C\uDFF0 \uD83C\uDFB2 \uD83D\uDC32");
@@ -28,7 +38,12 @@ public class Menu {
         return choice;  // Retourne le choix à la classe game.Game pour la logique
     }
 
-    // Méthode pour créer un personnage
+    /**
+     * Affiche le menu pour créer un personnage et retourne le personnage créé.
+     *
+     * @return Le personnage créé.
+     */
+
     public Character createCharacterMenu() {
         Scanner scan = new Scanner(System.in);
 
@@ -53,7 +68,12 @@ public class Menu {
         }
     }
 
-    // Méthode pour proposer de rejouer ou quitter
+    /**
+     * Propose au joueur de rejouer ou de quitter le jeu.
+     *
+     * @return true si le joueur souhaite rejouer, false sinon.
+     */
+
     public boolean replayMenu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Do you want to play again? (yes/no)");
@@ -61,27 +81,51 @@ public class Menu {
         return response.equals("yes");
     }
 
-    // Message de début de partie
+    /**
+     * Affiche un message de début de partie.
+     *
+     * @param player Le personnage du joueur.
+     * @param boardPosition La position du joueur sur le plateau.
+     * @param boardSize La taille du plateau.
+     */
+
     public void showStartGameMessage(Character player, int boardPosition, int boardSize) {
         System.out.println("\n" + player.getName() + " is starting on case " + boardPosition + " / " + boardSize);
     }
 
-    // Message de déplacement
+    /**
+     * Affiche un message lors du déplacement du joueur.
+     *
+     * @param diceRoll Le résultat du lancer de dés.
+     * @param boardPosition La nouvelle position du joueur sur le plateau.
+     * @param boardSize La taille du plateau.
+     */
+
     public void showMoveMessage(int diceRoll, int boardPosition, int boardSize) {
         System.out.println("\nYou rolled a " + diceRoll + "! You are now on case " + boardPosition + " / " + boardSize);
     }
 
-    // Message de victoire
+    /**
+     * Affiche un message de victoire.
+     *
+     * @param player Le personnage du joueur.
+     */
+
     public void showVictoryMessage(Character player) {
         System.out.println("\n✨ Congratulations " + player.getName() + ", you reached the end of the Dungeon! ✨\n");
     }
 
-    //Message de fin de partie
+    /**
+     * Affiche un message de fin de jeu.
+     */
+
     public void showExitGameMessage() {
         System.out.println("\nExiting the Dungeon, return to main menu. \n");
     }
 
-    // Message de fin
+    /**
+     * Affiche un message de sortie du jeu.
+     */
     public void showExitMessage() {
         System.out.println("\nExiting the game. Goodbye!\n");
     }

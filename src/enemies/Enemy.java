@@ -5,6 +5,11 @@ import characters.Character;
 
 import java.util.Objects;
 
+/**
+ * Classe abstraite représentant un ennemi dans le jeu.
+ * Chaque ennemi a un type, des points de vie (HP), une force d'attaque et un emoji qui le représente visuellement.
+ */
+
 public abstract class Enemy implements Case {
 
     private String type;
@@ -12,7 +17,15 @@ public abstract class Enemy implements Case {
     protected int strength;
     protected String emoji;
 
-    // Constructeur
+    /**
+     * Constructeur de la classe Enemy.
+     *
+     * @param type      Le type d'ennemi (par exemple Gobelin, Sorcerer).
+     * @param hp        Les points de vie de l'ennemi.
+     * @param strength  La force d'attaque de l'ennemi.
+     * @param emoji     L'emoji représentant l'ennemi.
+     */
+
     public Enemy(String type, int hp, int strength, String emoji) {
         this.type = type;
         this.hp = hp;
@@ -35,6 +48,14 @@ public abstract class Enemy implements Case {
     public String getEmoji() {
         return emoji;
     }
+
+    /**
+     * Interaction entre un personnage et un ennemi.
+     * Si le personnage attaque et tue l'ennemi, il accède à la pièce suivante. Si l'ennemi gagne, le personnage est vaincu.
+     *
+     * @param character Le personnage qui interagit avec l'ennemi.
+     * @return Une chaîne de caractères indiquant le résultat du combat (Victoire, Défaite, ou En cours).
+     */
 
     @Override
     public String interact(Character character) {

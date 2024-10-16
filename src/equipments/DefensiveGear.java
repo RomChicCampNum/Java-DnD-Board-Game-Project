@@ -3,6 +3,12 @@ package equipments;
 import board.Case;
 import characters.Character;
 
+/**
+ * Classe abstraite représentant un équipement défensif dans le jeu.
+ * Cette classe hérite de Case et contient les attributs communs aux équipements défensifs,
+ * ainsi que des méthodes pour interagir avec le personnage.
+ */
+
 public abstract class DefensiveGear implements Case {
 
     protected String name;
@@ -10,6 +16,15 @@ public abstract class DefensiveGear implements Case {
     protected int level;
     protected String emoji;
 
+
+    /**
+     * Constructeur principal pour la classe DefensiveGear.
+     *
+     * @param name  Le nom de l'équipement défensif.
+     * @param type  Le type de l'équipement défensif.
+     * @param level Le niveau de l'équipement défensif.
+     * @param emoji L'emoji associé à l'équipement défensif.
+     */
 
     // Constructeur principal equipments.DefensiveGear
     public DefensiveGear(String name, String type, int level, String emoji) {
@@ -19,6 +34,9 @@ public abstract class DefensiveGear implements Case {
         this.emoji = emoji;
 
     }
+
+    /** Getters et Setters
+     */
 
     // Getters
     public String getName() {
@@ -45,6 +63,15 @@ public abstract class DefensiveGear implements Case {
     public void setLevel(int level) {
         this.level = level;
     }
+
+
+    /**
+     * Gère l'interaction entre l'équipement défensif et un personnage.
+     * Cette méthode peut être redéfinie dans les sous-classes pour des interactions spécifiques.
+     *
+     * @param character Le personnage avec lequel l'équipement interagit.
+     * @return Une chaîne de caractères représentant le résultat de l'interaction.
+     */
 
     @Override
     public String interact(Character character) {

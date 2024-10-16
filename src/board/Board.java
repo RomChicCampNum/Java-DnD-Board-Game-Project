@@ -4,14 +4,28 @@ import equipments.*;
 import enemies.*;
 import java.util.ArrayList;
 
+/**
+ * Classe représentant le plateau de jeu.
+ * Le plateau contient une collection de cases qui peuvent être des ennemis, équipements ou des cases vides.
+ */
+
 public class Board {
     private ArrayList<Case> cases;
     private int boardSize = 64;
+
+    /**
+     * Constructeur du plateau. Initialise les cases lors de la création du plateau.
+     */
 
     public Board() {
         cases = new ArrayList<>();
         initializeBoard(); // Initialise les cases lors de la création du plateau
     }
+
+    /**
+     * Initialise les cases du plateau en les ajoutant à la liste des cases.
+     * Certaines cases contiennent des ennemis, équipements ou sont vides.
+     */
 
     // Initialiser les cases du plateau
     private void initializeBoard() {
@@ -49,6 +63,12 @@ public class Board {
             }
         }
     }
+
+    /**
+     * Retourne la liste des cases du plateau.
+     *
+     * @return Une liste d'objets Case.
+     */
 
     // Retourne la liste des cases
     public ArrayList<Case> getCases() {

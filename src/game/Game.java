@@ -10,6 +10,11 @@ import equipments.Potion;
 
 import java.util.Random;
 
+/**
+ * Classe représentant le jeu lui-même.
+ * Cette classe gère la logique de jeu, le menu principal, et les interactions entre le joueur et le plateau.
+ */
+
 public class Game {
 
     private Character player;
@@ -19,7 +24,12 @@ public class Game {
     private int boardSize;
     private int diceFace;
 
-    // Constructeur
+    /**
+     * Constructeur de la classe Game.
+     * Initialise le menu et le plateau de jeu, ainsi que la taille du plateau et les faces du dé.
+     */
+
+
     public Game() {
         this.menu = new Menu(); // L'instance de game.Menu
         this.board = new Board(); // Initialise le plateau
@@ -35,7 +45,11 @@ public class Game {
         return this.player;
     }
 
-    // Lancement du jeu
+    /**
+     * Démarre le jeu et affiche le menu principal.
+     * Gère les choix du joueur pour créer un personnage, commencer le jeu ou quitter.
+     */
+
     public void start() {
         boolean running = true;
         while (running) {
@@ -63,7 +77,12 @@ public class Game {
         }
     }
 
-    // Démarrer la partie
+    /**
+     * Démarre la partie et gère la logique de jeu.
+     * Affiche un message de début et gère le déplacement du joueur sur le plateau.
+     */
+
+
     public void startGame() {
         boardPosition = 1;
         menu.showStartGameMessage(player, boardPosition, boardSize);  // Message de début
@@ -86,7 +105,13 @@ public class Game {
         }
     }
 
-    // Déplacement du joueur sur le plateau
+    /**
+     * Déplace le joueur sur le plateau en fonction du lancer de dé.
+     *
+     * @throws CharacterOutsideOfBoardException Si la position du joueur dépasse la taille du plateau.
+     */
+
+
     public void movePlayer() throws CharacterOutsideOfBoardException {
         int diceRoll = rollDice();
         boardPosition += diceRoll;
@@ -130,7 +155,11 @@ public class Game {
     }
 
 
-    // Lancer un dé virtuel
+    /**
+     * Lance un dé virtuel.
+     *
+     * @return Un nombre aléatoire représentant le résultat du lancer de dé.
+     */
 
     private int rollDice() {
         Random rand = new Random();
