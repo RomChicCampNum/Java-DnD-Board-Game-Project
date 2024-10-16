@@ -10,7 +10,7 @@ Le joueur peut choisir un personnage entre deux classes : **Guerrier** ou **Magi
 
 - **Création de personnage** : Choisissez un **Guerrier** ou un **Magicien** et donnez-lui un nom.
   - Le Guerrier dispose d'une arme et d'un bouclier.
-  - Le Magicien dispose d'un sort et d'un philtre.
+  - Le Magicien dispose d'un sort et d'un anneau de protection.
 - **Déplacement sur le plateau** : Le personnage se déplace automatiquement à chaque tour en lançant un dé virtuel, avec un suivi de sa position sur le plateau.
 - **Interactions** : Le jeu permet au joueur d’affronter des ennemis ou de trouver des objets surprises.
 - **Plateau de 64 cases** : Comprend des ennemis à combattre et des objets ramassables.
@@ -56,7 +56,7 @@ The player can choose a character from two classes: **Warrior** or **Magician**.
 
 - **Character Creation**: Choose a **Warrior** or a **Magician** and give them a name.
   - The Warrior has a weapon and a shield.
-  - The Magician has a spell and a potion.
+  - The Magician has a spell and a protection ring.
 - **Movement on the Board**: The character automatically moves each turn by rolling a virtual die, with tracking of their position on the board.
 - **Interactions**: The game allows the player to fight enemies or find surprise items.
 - **64-Case Board**: Includes enemies to fight and collectible items.
