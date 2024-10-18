@@ -34,6 +34,7 @@ Le joueur peut choisir un personnage entre deux classes : **Guerrier** ou **Magi
 
 ## Screenshots :
 
+### Exemple de déroulé d'une partie : 
 ![Start](https://github.com/user-attachments/assets/8c240327-9fac-4122-91fb-a48fe7a1ea00)
 
 ![Object and fight](https://github.com/user-attachments/assets/57e945d6-0823-4bbe-83e1-9ad526ff5e11)
@@ -41,6 +42,13 @@ Le joueur peut choisir un personnage entre deux classes : **Guerrier** ou **Magi
 ![Object and fight 2](https://github.com/user-attachments/assets/8de07cd0-3abb-45e2-84ad-2e3e6dcaaec2)
 
 ![Party end](https://github.com/user-attachments/assets/df89973f-fa2d-4943-b6c6-9417606fbac9)
+
+### Diagramme de Classe :
+![Class Diagram](https://github.com/user-attachments/assets/39746866-4212-4923-bf32-355192983e58)
+
+### Digramme d'usage utilisateur :
+![UserCaseDiagram](https://github.com/user-attachments/assets/64202543-6d3b-4e71-a90b-fb24b231c6ce)
+
 
 ---
 
@@ -80,6 +88,7 @@ The player can choose a character from two classes: **Warrior** or **Magician**.
 
 ## Screenshots:
 
+### Example of a game sequence:
 ![Start](https://github.com/user-attachments/assets/8c240327-9fac-4122-91fb-a48fe7a1ea00)
 
 ![Object and fight](https://github.com/user-attachments/assets/57e945d6-0823-4bbe-83e1-9ad526ff5e11)
@@ -87,3 +96,9 @@ The player can choose a character from two classes: **Warrior** or **Magician**.
 ![Object and fight 2](https://github.com/user-attachments/assets/8de07cd0-3abb-45e2-84ad-2e3e6dcaaec2)
 
 ![Party end](https://github.com/user-attachments/assets/df89973f-fa2d-4943-b6c6-9417606fbac9)
+
+### Class Diagram:
+![Class Diagram](https://github.com/user-attachments/assets/39746866-4212-4923-bf32-355192983e58)
+
+### User Case Diagram:
+![UserCaseDiagram](https://github.com/user-attachments/assets/64202543-6d3b-4e71-a90b-fb24b231c6ce)
